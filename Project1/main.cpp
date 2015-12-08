@@ -7,6 +7,8 @@
 
 //Include GLM
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/transform.hpp>
 
 //Include the standard C++ headers
 #include <stdio.h>
@@ -18,6 +20,8 @@
 
 #include "loadShaders.h"
 
+using namespace glm;
+
 int main(void)
 {
 	if (!glfwInit())
@@ -25,6 +29,8 @@ int main(void)
 		fprintf(stderr, "Failed to initialize GLFW \n");
 		return -1;
 	}
+
+
 
 	glfwWindowHint(GLFW_SAMPLES, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -39,6 +45,7 @@ int main(void)
 		glfwTerminate();
 		return -1;
 	}
+
 
 	glfwMakeContextCurrent(window);
 	glewExperimental = true;
@@ -70,11 +77,31 @@ int main(void)
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 
 	GLuint programID = LoadShaders("SimpleVertexShader.vertexshader.txt", "SimpleFragmentShader.fragmentshader.txt");
+
+	int width = 4;
+	int height = 3;
+
+	mat4 Projection = perspective(radians(45.0f), (float)width / (float)height, 0.1f, 100.0f);
+
+	mat4 View = lookAt(
+		vec3(4, 3, 3),	//camera is at 4,3,3 in world space
+		vec3(0, 0, 0),	//and looks at the origin
+		vec3(0, 1, 0)	//head is up
+		);
+
+	//an identity matrix
+	mat4 Model = mat4(1.0f);
+
+	mat4 mvp = Projection * View * Model;
+
+	GLuint MatrixID = glGetUniformLocation(programID, "MVP");
+
+	
+
 	do {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glUseProgram(programID);
-
-
+		glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &mvp[0][0]);
 
 		//start to draw triangle
 		glEnableVertexAttribArray(0);
@@ -91,7 +118,7 @@ int main(void)
 		glDisableVertexAttribArray(0);
 
 
-
+		
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

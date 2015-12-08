@@ -1,22 +1,9 @@
-﻿Build started 07/12/2015 15:43:04.
+﻿Build started 08/12/2015 16:03:05.
      1>Project "C:\Users\jeremy.bennett\Documents\Visual Studio 2015\Projects\Project1\Project1\Project1.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt loadShaders.cpp main.cpp
-         loadShaders.cpp
-     1>c:\users\jeremy.bennett\documents\visual studio 2015\projects\project1\project1\loadshaders.h(4): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\jeremy.bennett\documents\visual studio 2015\projects\project1\project1\loadshaders.h(4): error C2146: syntax error: missing ';' before identifier 'LoadShaders'
-     1>c:\users\jeremy.bennett\documents\visual studio 2015\projects\project1\project1\loadshaders.cpp(3): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\jeremy.bennett\documents\visual studio 2015\projects\project1\project1\loadshaders.cpp(3): error C2086: 'int GLuint': redefinition
-         c:\users\jeremy.bennett\documents\visual studio 2015\projects\project1\project1\loadshaders.h(4): note: see declaration of 'GLuint'
-     1>c:\users\jeremy.bennett\documents\visual studio 2015\projects\project1\project1\loadshaders.cpp(3): error C2146: syntax error: missing ';' before identifier 'LoadShaders'
-     1>c:\users\jeremy.bennett\documents\visual studio 2015\projects\project1\project1\loadshaders.cpp(3): error C2143: syntax error: missing ';' before '{'
-     1>c:\users\jeremy.bennett\documents\visual studio 2015\projects\project1\project1\loadshaders.cpp(3): error C2447: '{': missing function header (old-style formal list?)
-         Generating Code...
-         Compiling...
-         main.cpp
-         Generating Code...
-     1>Done Building Project "C:\Users\jeremy.bennett\Documents\Visual Studio 2015\Projects\Project1\Project1\Project1.vcxproj" (Build target(s)) -- FAILED.
+     1>Link:
+         Project1.vcxproj -> C:\Users\jeremy.bennett\Documents\Visual Studio 2015\Projects\Project1\Debug\Project1.exe
+     1>Done Building Project "C:\Users\jeremy.bennett\Documents\Visual Studio 2015\Projects\Project1\Project1\Project1.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.81
+Time Elapsed 00:00:00.06
