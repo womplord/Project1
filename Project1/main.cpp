@@ -22,6 +22,15 @@
 
 using namespace glm;
 
+GLuint loadBMP_custom(const char * imagepath)
+{
+	unsigned char header[54];
+	unsigned int dataPos;
+	unsigned int width, height;
+	unsigned int imageSize;
+	unsigned char* data;
+}
+
 int main(void)
 {
 	if (!glfwInit())
